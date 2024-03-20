@@ -30,11 +30,7 @@ namespace CloudTechLab1Server
             listener = new TcpListener(IPAddress.Parse("127.0.0.1"), 13000);
             listener.Start();
 
-#if LOG
-            Console.WriteLine("Server mounted, listening to port 13000.");
-#endif
-
-            for (int i = 0; i < LIMIT; i++) 
+            for (int i = 0; i < LIMIT; i++)
             {
                 Thread t = new Thread(new ThreadStart(Service));
                 t.Start();
@@ -43,12 +39,10 @@ namespace CloudTechLab1Server
 
         public static void Service()
         {
-            while(true)
+            while (true)
             {
                 Socket soc = listener.AcceptSocket();
-#if LOG
-                Console.WriteLine("Connected: {0}", soc.RemoteEndPoint);
-#endif
+
                 try
                 {
                     Stream s = new NetworkStream(soc);
@@ -68,16 +62,10 @@ namespace CloudTechLab1Server
                     }
                     s.Close();
                 }
-                catch (Exception e)
+                catch
                 {
-#if LOG
-                    Console.WriteLine(e.Message);
-#endif
+                    soc.Close();
                 }
-#if LOG
-                    Console.WriteLine("Disconnected: {0}", soc.RemoteEndPoint);
-#endif
-                soc.Close();
             }
         }
     }

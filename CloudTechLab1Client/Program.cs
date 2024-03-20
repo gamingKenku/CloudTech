@@ -8,10 +8,9 @@ namespace CloudTechLab1Client
     {
         public static void Main(string[] args)
         {
-            //Порт нашего сервера
-            Int32 port = 12000;
+            Int32 port = 13000;
             string serverAddr = "127.0.0.1";
-            //Если адрес сервера передан как параметр
+
             if (args.Length > 0)
                 serverAddr = args[0];
 

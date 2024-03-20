@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudTechLab1Server", "CloudTechLab1\CloudTechLab1Server.csproj", "{CB3EEE1B-13A8-46F6-94AA-5F98FADBE181}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudTechLab1TCPServer", "CloudTechLab1\CloudTechLab1TCPServer.csproj", "{CB3EEE1B-13A8-46F6-94AA-5F98FADBE181}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudTechLab1Client", "CloudTechLab1Client\CloudTechLab1Client.csproj", "{14E7A4A5-35B7-4F29-BF90-BEC2C0B5017B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudTechLab1TCPClient", "CloudTechLab1Client\CloudTechLab1TCPClient.csproj", "{14E7A4A5-35B7-4F29-BF90-BEC2C0B5017B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudTechLab1UDPServer", "CloudTechLab1UDPServer\CloudTechLab1UDPServer.csproj", "{61EB34D7-CC7F-4A59-A6DB-4FAE8693E660}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudTechLab1UDPClient", "CloudTechLab1UDPClient\CloudTechLab1UDPClient.csproj", "{0DE9914D-D2A0-4C3F-9B04-5479DAC0599B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{14E7A4A5-35B7-4F29-BF90-BEC2C0B5017B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14E7A4A5-35B7-4F29-BF90-BEC2C0B5017B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14E7A4A5-35B7-4F29-BF90-BEC2C0B5017B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61EB34D7-CC7F-4A59-A6DB-4FAE8693E660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61EB34D7-CC7F-4A59-A6DB-4FAE8693E660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61EB34D7-CC7F-4A59-A6DB-4FAE8693E660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61EB34D7-CC7F-4A59-A6DB-4FAE8693E660}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DE9914D-D2A0-4C3F-9B04-5479DAC0599B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DE9914D-D2A0-4C3F-9B04-5479DAC0599B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DE9914D-D2A0-4C3F-9B04-5479DAC0599B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DE9914D-D2A0-4C3F-9B04-5479DAC0599B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
