@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{14E7A4A5-35B7-4F29-BF90-BEC2C0B5017B}</ProjectGuid>
+    <ProjectGuid>{6F72365D-AB58-4C65-BE05-959F31878C3C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CloudTechLab1Client</RootNamespace>
-    <AssemblyName>CloudTechLab1Client</AssemblyName>
+    <RootNamespace>CloudTechLab2WordSorterClient</RootNamespace>
+    <AssemblyName>CloudTechLab2WordSorterClient</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="WordSorterClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

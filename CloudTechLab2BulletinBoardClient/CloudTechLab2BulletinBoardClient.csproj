@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{14E7A4A5-35B7-4F29-BF90-BEC2C0B5017B}</ProjectGuid>
+    <ProjectGuid>{ABD5F8D5-CEE7-4711-A1F3-4AD71A0B5A25}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CloudTechLab1Client</RootNamespace>
-    <AssemblyName>CloudTechLab1Client</AssemblyName>
+    <RootNamespace>CloudTechLab2BulletinBoardClient</RootNamespace>
+    <AssemblyName>CloudTechLab2BulletinBoardClient</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="BulletinBoardClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
