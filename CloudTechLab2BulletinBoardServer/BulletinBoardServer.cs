@@ -23,6 +23,7 @@ namespace CloudTechLab2BulletinBoardServer
         {
             listener = new TcpListener(IPAddress.Parse("127.0.0.1"), 13000);
             listener.Start();
+            Console.WriteLine("Server started.");
 
             if (!File.Exists(FILE_PATH))
             {
@@ -32,6 +33,7 @@ namespace CloudTechLab2BulletinBoardServer
             for (int i = 0; i < LIMIT; i++)
             {
                 Thread t = new Thread(new ThreadStart(Service));
+                t.Name = i.ToString();
                 t.Start();
             }
         }
@@ -41,6 +43,7 @@ namespace CloudTechLab2BulletinBoardServer
             while (true)
             {
                 Socket soc = listener.AcceptSocket();
+                Console.WriteLine($"Socket accepted at {Thread.CurrentThread.Name}.");
 
                 try
                 {
@@ -52,7 +55,11 @@ namespace CloudTechLab2BulletinBoardServer
                     while (true)
                     {
                         string command = sr.ReadLine();
-                        if (command == "" || command == null) break;
+                        if (command == "" || command == null)
+                        {
+                            sw.WriteLine("break");
+                            break;
+                        }
 
                         if (command == "LIST")
                         {
@@ -67,6 +74,7 @@ namespace CloudTechLab2BulletinBoardServer
 
                                 string json = JsonConvert.SerializeObject(messages);
                                 sw.WriteLine(json);
+                                Console.WriteLine($"List of messages requested at thread {Thread.CurrentThread.Name}.");
                             }
                         }
                         else
@@ -74,7 +82,8 @@ namespace CloudTechLab2BulletinBoardServer
                             using (StreamWriter fsw = new StreamWriter(FILE_PATH, true))
                             {
                                 fsw.WriteLine(command);
-                                sw.WriteLine("Message added: \"{0}\"", command);
+                                sw.WriteLine("Message added: \"{0}\".", command);
+                                Console.WriteLine($"Message accepted: {command} by thread {Thread.CurrentThread.Name}.");
                             }
                         }
                     }
@@ -83,7 +92,12 @@ namespace CloudTechLab2BulletinBoardServer
                 }
                 catch
                 {
+                    Console.WriteLine($"Exception caught at thread {Thread.CurrentThread.Name}.");
+                }
+                finally
+                {
                     soc.Close();
+                    Console.WriteLine($"Socket closed at {Thread.CurrentThread.Name}.");
                 }
             }
         }

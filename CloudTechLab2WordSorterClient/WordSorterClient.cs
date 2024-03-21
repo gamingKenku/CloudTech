@@ -13,8 +13,6 @@ namespace CloudTechLab2WordSorterClient
     {
         public static void Main(string[] args)
         {
-            bool break_flag = false;
-
             Int32 port = 13000;
             string serverAddr = "127.0.0.1";
 
@@ -31,29 +29,40 @@ namespace CloudTechLab2WordSorterClient
                 {
                     Console.WriteLine("Enter the text and press \"Enter\" key to send. Enter empty line to end execution.");
                     string text = Console.ReadLine();
-                    if (text == "" || text == null) break_flag = true;
+
                     sw.WriteLine(text);
+
+                    string answer = sr.ReadLine();
+
+                    if (answer == "break")
+                    {
+                        Console.WriteLine("Have a good day.");
+                        break;
+                    }
 
                     Console.WriteLine("Entered words:");
 
-                    string json = sr.ReadLine();
-                    List<string> words = JsonConvert.DeserializeObject<List<string>>(json);
+                    List<string> words = JsonConvert.DeserializeObject<List<string>>(answer);
 
                     foreach (string word in words)
                     {
-                        Console.WriteLine($"{word}");
+                        Console.WriteLine($"\"{word}\"");
                     }
-
-                    if (break_flag) break;
                 }
 
-                Console.WriteLine("Have a good day.");
                 s.Close();
+            }
+            catch
+            {
+                Console.WriteLine("Exception caught at client side.");
             }
             finally
             {
                 client.Close();
             }
+
+            Console.WriteLine("Press any key to close...");
+            Console.ReadKey();
         }
     }
 }

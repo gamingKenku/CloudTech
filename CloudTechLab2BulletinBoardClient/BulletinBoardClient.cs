@@ -47,14 +47,22 @@ namespace CloudTechLab2BulletinBoardClient
                         Console.WriteLine(sr.ReadLine());
                     }
                 }
+
                 Console.WriteLine("Have a good day.");
 
                 s.Close();
+            }
+            catch
+            {
+                Console.WriteLine("Exception caught at client side.");
             }
             finally
             {
                 client.Close();
             }
+
+            Console.WriteLine("Press any key to close...");
+            Console.ReadKey();
         }
     }
 }
